@@ -6,7 +6,6 @@ const TodoForm = (props) => {
   const [input, setInput] = useState("");
   const changeHandler = (event) => {
     setInput(event.target.value);
-    console.log(event.target.value);
   };
   const submitHandler = (event) => {
     event.preventDefault();
