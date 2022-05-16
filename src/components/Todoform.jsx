@@ -1,9 +1,13 @@
 /** @format */
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TodoForm = (props) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(props.edit ? props.edit.text : "");
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
   const changeHandler = (event) => {
     setInput(event.target.value);
   };
@@ -13,14 +17,26 @@ const TodoForm = (props) => {
       alert("please fill todo input");
       return;
     }
-    props.addTodoHandler(input);
+    props.sumbitTodoHandler(input);
     setInput("");
     // add todo user in list
   };
+
   return (
     <form onSubmit={submitHandler}>
-      <input type="text" value={input} onChange={changeHandler}></input>
-      <button type="submit">Add</button>
+      <div className="input-div">
+        <input
+          className="input"
+          type="text"
+          value={input}
+          onChange={changeHandler}
+          placeholder={props.edit ? "update value..." : "add new value"}
+          ref={inputRef}
+        />
+        <button type="submit" className="button">
+          {props.edit ? "update" : "Add"}
+        </button>
+      </div>
     </form>
   );
 };

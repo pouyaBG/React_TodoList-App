@@ -4,8 +4,14 @@ import { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./Todoform";
 
-const TodoList = ({ todos, onComplate, onDelete }) => {
+const TodoList = ({ todos, onComplate, onDelete, onUpdateTodo }) => {
   const [Edit, setEdit] = useState({ id: null, text: "", isComplete: false });
+  
+  const editTodoHandler = (newInput) => {
+    onUpdateTodo(Edit.id, newInput);
+    setEdit({ id: null, text: "" });
+  };
+
   const renderHandler = () => {
     if (todos.length === 0) return <p>add some todos</p>;
     return todos.map((todo) => {
@@ -20,6 +26,14 @@ const TodoList = ({ todos, onComplate, onDelete }) => {
       );
     });
   };
-  return <div>{Edit.id ? <TodoForm /> : renderHandler()}</div>;
+  return (
+    <div>
+      {Edit.id ? (
+        <TodoForm sumbitTodoHandler={editTodoHandler} edit={Edit} />
+      ) : (
+        renderHandler()
+      )}
+    </div>
+  );
 };
 export default TodoList;
