@@ -1,5 +1,5 @@
 # React-TodoList App
-This app is a project you can add some your daily work and manage it. Implement by HTML, CSS and React.js . In this project I used React select to better control on select element and implemented search and filter component. This project has been implemented in a responsive design.
+This app is a project you can add some your daily work and manage it. Implement by HTML, CSS and React.js . In this project I used React select to better control on select element and implemented search and filter component. This project has been implemented in a responsive design
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
