@@ -20,11 +20,6 @@ const Navbar = ({ unComplatedTodos, onChange, selectedOption }) => {
         options={options}
         className="select-part"
       />
-      {/* <select onChange={selectedHandler} value={status}>
-        <option value="All">All</option>
-        <option value="complated">complated</option>
-        <option value="uncomplated">uncomplated</option>
-      </select> */}
     </header>
   );
 };
