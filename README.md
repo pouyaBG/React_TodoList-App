@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # React Select
 
 for install
-## npm i react-select
+### `npm i react-select` 
 
 ## Available Scripts
 
