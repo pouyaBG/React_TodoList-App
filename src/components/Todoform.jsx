@@ -1,6 +1,7 @@
 /** @format */
 
 import { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
 
 const TodoForm = (props) => {
   const [input, setInput] = useState(props.edit ? props.edit.text : "");
@@ -14,11 +15,12 @@ const TodoForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (!input) {
-      alert("please fill todo input");
+      toast.warning("Please Enter a Todo");
       return;
     }
     props.sumbitTodoHandler(input);
     setInput("");
+    toast.success("success Add Todo");
     // add todo user in list
   };
 

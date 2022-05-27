@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import Navbar from "./Navbar";
 import TodoForm from "./Todoform";
 import TodoList from "./TodoList";
@@ -36,6 +37,7 @@ const TodoApp = () => {
     // clone:todos
     const updatedTodos = [...todos];
     updatedTodos[index] = selectedTodo;
+    toast.info("your Todo has been completed");
     setTodos(updatedTodos);
   };
 
@@ -43,6 +45,7 @@ const TodoApp = () => {
     // findIndex
     const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
+    toast.info("your Todo has been delete");
   };
 
   const updateTodo = (id, newInput) => {

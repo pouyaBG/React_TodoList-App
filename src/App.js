@@ -1,4 +1,5 @@
 /** @format */
+import { ToastContainer } from "react-toastify";
 
 import "./App.scss";
 import TodoApp from "./components/TodoApp";
@@ -8,6 +9,18 @@ function App() {
     <div className="App">
       <h1>TodoList App</h1>
       <TodoApp />
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }
