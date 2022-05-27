@@ -38,7 +38,9 @@ const TodoApp = () => {
     const updatedTodos = [...todos];
     updatedTodos[index] = selectedTodo;
     setTodos(updatedTodos);
-    selectedTodo.isComplete ? toast.info("ok") : toast.info("nok");
+    selectedTodo.isComplete
+      ? toast.info("your Todo has been completed")
+      : toast.info("your Todo has been uncompleted");
   };
 
   const onDelete = (id) => {
