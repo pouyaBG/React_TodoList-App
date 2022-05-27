@@ -11,7 +11,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # React Select
 
 for install
-### `npm i react-select` 
+
+### `npm i react-select`
+
+# Toasify
+
+for install
+
+### `npm install --save react-toastify`
 
 ## Available Scripts
 

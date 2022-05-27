@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 
 import "./App.scss";
 import TodoApp from "./components/TodoApp";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark"
+        // theme="dark"
       />
     </div>
   );
