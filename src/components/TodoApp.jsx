@@ -37,8 +37,12 @@ const TodoApp = () => {
     // clone:todos
     const updatedTodos = [...todos];
     updatedTodos[index] = selectedTodo;
-    toast.info("your Todo has been completed");
     setTodos(updatedTodos);
+    if (selectedTodo.isComplete) {
+      toast.info("your Todo has been completed");
+    } else {
+      toast.info("your Todo has been uncompleted");
+    }
   };
 
   const onDelete = (id) => {
