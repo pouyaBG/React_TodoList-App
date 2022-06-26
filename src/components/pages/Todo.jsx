@@ -1,5 +1,3 @@
-/** @format */
-
 const Todo = ({ todo, onComplate, onEdit, onDelete }) => {
   return (
     <div key={todo.id} className="todo">

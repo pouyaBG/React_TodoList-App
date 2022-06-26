@@ -1,10 +1,9 @@
-/** @format */
-
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import Navbar from "./Navbar";
-import TodoForm from "./Todoform";
-import TodoList from "./TodoList";
+import { getTodos } from "../../services/getApi";
+import Navbar from "../common/Navbar";
+import TodoForm from "../pages/Todoform";
+import TodoList from "../pages/TodoList";
 
 const TodoApp = () => {
   //  state for edit todo user
@@ -15,6 +14,7 @@ const TodoApp = () => {
   const [selectedOption, setSelectedOption] = useState("All");
 
   useEffect(() => {
+    getTodos().then((todos) => console.log(todos));
     filterTodos(selectedOption.value);
   }, [todos, selectedOption]);
 
