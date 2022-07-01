@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { getTodos } from "../../services/getApi";
-import Navbar from "../common/Navbar";
-import TodoForm from "../pages/Todoform";
-import TodoList from "../pages/TodoList";
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import Navbar from '../common/Navbar';
+import TodoForm from '../pages/Todoform';
+import TodoList from '../pages/TodoList';
 
 const TodoApp = () => {
   //  state for edit todo user
@@ -11,10 +10,9 @@ const TodoApp = () => {
   // save completeTodo
   const [filteredTodos, setFilteredTodos] = useState([]);
   // status state
-  const [selectedOption, setSelectedOption] = useState("All");
+  const [selectedOption, setSelectedOption] = useState('All');
 
   useEffect(() => {
-    getTodos().then((todos) => console.log(todos));
     filterTodos(selectedOption.value);
   }, [todos, selectedOption]);
 
@@ -39,15 +37,15 @@ const TodoApp = () => {
     updatedTodos[index] = selectedTodo;
     setTodos(updatedTodos);
     selectedTodo.isComplete
-      ? toast.info("your Todo has been completed")
-      : toast.info("your Todo has been uncompleted");
+      ? toast.info('your Todo has been completed')
+      : toast.info('your Todo has been uncompleted');
   };
 
   const onDelete = (id) => {
     // findIndex
     const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
-    toast.info("your Todo has been delete");
+    toast.info('your Todo has been delete');
   };
 
   const updateTodo = (id, newInput) => {
@@ -61,10 +59,10 @@ const TodoApp = () => {
 
   const filterTodos = (status) => {
     switch (status) {
-      case "Complated":
+      case 'Complated':
         setFilteredTodos(todos.filter((t) => t.isComplete));
         break;
-      case "Uncomplated":
+      case 'Uncomplated':
         setFilteredTodos(todos.filter((t) => t.isComplete === false));
         break;
       default:
@@ -78,7 +76,7 @@ const TodoApp = () => {
     filterTodos(event.value);
   };
   return (
-    <div className="container">
+    <div className='container'>
       <Navbar
         unComplatedTodos={todos.filter((todo) => !todo.isComplete).length}
         selectedOption={selectedOption}
